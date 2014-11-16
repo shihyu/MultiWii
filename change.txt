@@ -256,7 +256,7 @@ HORIZON mode <- new
 - SERVO_TILT_MIX
   introduced by Bledi and Gary
   http://youtu.be/zKGr6iR54vM 
-  corrected after to support optionally up to 2 AUX channels superposition to control the gimbal
+  corrected after to support?optionally?up to 2 AUX channels?superposition?to control the gimbal
 
 - CAM STAB: (thanks to Gary and suggested or Arne)
   Ability to define Cam Stab control channels used
@@ -398,7 +398,7 @@ HORIZON mode <- new
 ***IMU and baro***
 
 - gyro calibration could be held until the MWC stops moving
-  introduced by MIS, and made optional after via a specific define: #define GYROCALIBRATIONFAILSAFE
+  introduced by MIS, and made optional after via a specific define:?#define GYROCALIBRATIONFAILSAFE
 
 - mag gain calibration is improved thanks to EOSBandi
   based on Fabio FreeIMU code. We won't forget you Fabio...
@@ -728,7 +728,7 @@ Stable mode
   The settings were formerly 2G. We noticed vibrations could cause ACC saturation
   http://www.multiwii.com/forum/viewtopic.php?f=8&t=849
   , causing a wrong ACC measurement, and causing a wrong PITCH/ROLL angle deduction.
-  This problem was probably the main cause of the “level drift” problem.
+  This problem was probably the main cause of the ?level drift? problem.
   => level mode should be much better now with those sensors.
   One consequence: TRUSTED ACC is now enabled by default and will probably
   be removed in future versions.
@@ -770,7 +770,7 @@ GPS mode:
    GPS POSITION HOLD and GPS RETURN to HOME are both implemented with the Serial GPS option.
 
   I2C Serial boards
-   EOSBandi did some code to add “a specific arduino + a Serial GPS” which
+   EOSBandi did some code to add ?a specific arduino + a Serial GPS? which
    communicates with multiwii via I2C.
    http://code.google.com/p/i2c-gps-nav/
    Must be defined in config.h
@@ -784,7 +784,7 @@ GPS mode:
   The GPS mode needs:
    -a very well calibrated MAG which is not disturbed by running motors.
     (no current of magnetic fields influence on the MAG, otherwise,
-    the GPS won’t work fine)
+    the GPS won?t work fine)
    -an ACC correctly tuned for level stabilization
 
   The principle is very simple for the moment: multiwii tries to lean
@@ -877,7 +877,7 @@ LED
 
 HeadFree mode
   Something similar to MK Carefree mode was added.
-  Firstly introduced by mahowik as a “simple mode”
+  Firstly introduced by mahowik as a ?simple mode?
   http://www.multiwii.com/forum/viewtopic.php?f=7&t=925
   A specific check box was added in the GUI to activate this mode via a switch.
   You need to have a magnetometer and accelerometer on the board
@@ -887,13 +887,13 @@ HeadFree mode
 
 
 Pass-through mode
-  It’s a checkbox in the GUI.
+  It?s a checkbox in the GUI.
   The purpose is to bypass the IMU for some configs like flying wings.
 
 
 
 Beeper mode
-  It’s a checkbox in the GUI.
+  It?s a checkbox in the GUI.
   The purpose is to activate a beeper in case you have a buzzer
   installed and you lost your multi in high grass for instance.
 
@@ -930,7 +930,7 @@ Gyro smoothing
 
 
 Inflight ACC-calibration:
-  It’s a way to calibrate the level via on flight tests.
+  It?s a way to calibrate the level via on flight tests.
   Must be defined in config.h
   #define InflightAccCalibration
 
@@ -948,7 +948,7 @@ Coding specific improvements:
    This was something that was not well coded at the beginning.
    http://www.multiwii.com/forum/viewtopic.php?f=8&t=1259
    This mod should not affect board definition (a remapping of axis was done)
-   About individual sensor orientation: is not the same and it’s normal,
+   About individual sensor orientation: is not the same and it?s normal,
    there is no bug to correct here.
 
   task state in the main loop to reduce the jitter time loop
@@ -1450,11 +1450,11 @@ pull-ups on 3.3V. note that most breakout boards are built with pullups already 
 
   - RC rate can be extended to 5. With this option, we should see a more linear response on pitch/roll sticks for very acrobatic setups.
 
-  - on quadris we can notice some “yaw jumps” when the yaw is suddenly stopped.
+  - on quadris we can notice some ?yaw jumps? when the yaw is suddenly stopped.
     There is now a function to smooth the stop.
     If you don't like it just remove the line axisPID[YAW] = constrain(axisPID[YAW],-100-abs(rcCommand[YAW]),+100+abs(rcCommand[YAW]));
 
-  - sketch: I added an  “advanced users settings” part with a description of some more tunning possibilities.
+  - sketch: I added an  ?advanced users settings? part with a description of some more tunning possibilities.
 
   - If the ACC is present (Nunchuk or other I2C), you won't be able to arm the motors until you do a proper ACC calibration manually.
     If the calibration is not done or if the multi is too much inclinated, the status LED will slowly blink every 1s.
